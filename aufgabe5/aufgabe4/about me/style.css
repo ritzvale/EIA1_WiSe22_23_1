@@ -5,6 +5,7 @@
 
 .my-header-logo-img {
   height: 250px;
+  justify-content: start;
 }
 
 .my-header-portfolio {
@@ -24,8 +25,8 @@
 
 .my-header-img {
   background: transparent url(bild/hintergrundbild_2-bearbeitet.png);
-  background-size: cover; 
-  height: 300px;
+  background-size: 100%; 
+  height: 700px;
 }
 
 .my-header-div {
@@ -37,8 +38,13 @@
 
 .my-header-div-ul {
   display: flex;
+  flex-direction: row;
 }
 
+.footer {
+  display:block;
+
+}
 .follow {
   display: flex;
   justify-content: center;
@@ -59,13 +65,13 @@
 
 footer {
   background-color: rgb(116, 56, 56);
-  text-align: left;
+  text-align: start;
   padding: 3px;
   color: rgb(0, 0, 0);
 }
 
 footer {
-  display: flex;
-  flex-direction: column;
+  display: reverse;
+  flex-direction: row-reverse;
   align-items: center;
 }

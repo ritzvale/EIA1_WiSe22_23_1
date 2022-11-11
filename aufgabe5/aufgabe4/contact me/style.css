@@ -1,14 +1,19 @@
 *{
-  font-family: 'Montserrat', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+.my-header-logo {
+  position: absolute;
+  padding: 0px 16px;
+  top: 0;
+}
 
 .my-header-logo-img {
   height: 250px;
 }
 
 .my-header-portfolio {
-  color: rgb(0, 0, 0);
+  color: white;
   text-decoration: none
 }
 
@@ -58,7 +63,7 @@
 }
 
 footer {
-  background-color: rgb(116, 56, 56);
+  background-color: rgb(204, 156, 156);
   text-align: left;
   padding: 3px;
   color: rgb(0, 0, 0);

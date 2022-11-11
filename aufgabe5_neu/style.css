@@ -1,0 +1,43 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+  }
+
+.header-img1{
+    width: 100%;
+  }
+
+.my-header-logo-img {
+    height: 250px;
+  }
+  
+.my-header-portfolio {
+    color: rgb(0, 0, 0);
+    text-decoration: none
+  }
+  
+.my-header-about {
+    color: black;
+    text-decoration: none
+  }
+  
+.my-header-contact {
+    color: black;
+    text-decoration: none
+  }
+  
+.my-header-img {
+    background: transparent url(bild/hintergrundbild_2-bearbeitet.png);
+    background-size: cover; 
+    height: 300px;
+  }
+  
+.my-header-div {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 2vw;
+  }
+  
+.my-header-div-ul {
+    display: flex;
+  }
