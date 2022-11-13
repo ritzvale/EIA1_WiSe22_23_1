@@ -191,7 +191,7 @@
 .bilder-portfolio {
   text-align: center;
   position: absolute;
-  background-color: white;
+  background-color: #f0ecf8;
 }
 
 .img {
@@ -236,5 +236,5 @@ textarea {
   height: 7em;
 }
 input:focus, textarea:focus {
-  background-color: #d9d9d9;
+  background-color: #d8cccc;
 }
