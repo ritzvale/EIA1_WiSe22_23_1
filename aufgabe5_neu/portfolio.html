@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    
+</head>
+<body bgcolor=#f0ecf8>
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <img class="banner" src="./bilder/internship.PNG">
+
+    <header id="my-header">
+
+        <div>
+            <a href="./aboutme.html"><img src="./bilder/IMG_2411.PNG" class="my-header-logo-img"></a>
+        </div>
+
+        <nav class="my-nav">
+
+            <div class="my-header-img" ></div>
+            <div class="my-header-div">
+
+                <ul class="my-header-div-ul">
+                    <li style="list-style-type: none; padding: 0 8px"><a href="./aboutme.html" class="my-header-about">About me</a></li>
+                    <li style="list-style-type: none; padding: 0 8px"><a href="./portfolio.html" class="my-header-portfolio">Portfolio</a></li>
+                    <li style="list-style-type: none; padding: 0 8px"><a href="./contact.html" class="my-header-contact">Contact</a></li>
+                </ul>
+        
+            </div>
+
+        </nav>
+    </header>
+
+    <h2 class="überschrift-portfolio-portraits">Here are some portraits of me.</h2>
+
+    <style>
+        * {
+            box-sizing: content-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .bildergalerie_slider {
+            overflow: hidden;
+        }        
+        
+        .bildergalerie_slider_alle_slides {
+            width: 600%;
+            position: relative; 
+            top:300px;   
+            animation: 20s slideranimation infinite;
+        }
+        
+        @keyframes slideranimation {
+            0% {
+                left: 0;
+            }
+        
+            15% {
+                left: 0;
+            }
+        
+            20% {
+                left: -100%;
+            }
+        
+            35% {
+                left: -100%;
+            }
+        
+            40% {
+                left: -200%;
+            }
+        
+            55% {
+                left: -200%;
+            }
+        
+            60% {
+                left: -300%;
+            }
+        
+            75% {
+                left: -300%;
+            }
+        
+            80% {
+                left: -400%;
+            }
+        
+            95% {
+                left: -400%;
+            }
+        
+            100% {
+                left: -500%;
+            }
+        }        
+        
+        .bildergalerie_slider_alle_slides figure {
+            position: relative;
+            float: left;
+        }
+        
+        .bildergalerie_slider_alle_slides figure img {
+            width: 100vw;
+            object-fit: cover;
+        }
+        
+        .bildergalerie_slider_alle_slides figure:nth-child(1) img,
+        .bildergalerie_slider_alle_slides figure:nth-child(5) img {
+            object-position: center;       
+        }        
+        
+        .bildergalerie_slider_alle_slides figure:nth-child(2) img,
+        .bildergalerie_slider_alle_slides figure:nth-child(3) img,         
+        .bildergalerie_slider_alle_slides figure:nth-child(4) img {
+            object-position: center 20%;       
+        }        
+        
+        </style>
+        
+        <div class="bildergalerie_slider">
+            <div class="bildergalerie_slider_alle_slides">
+                <figure>
+                    <img src="./bilder/bild1 - bearbeitet.png">
+                </figure>
+                <figure>
+                    <img src="./bilder/bild2 - bearbeitet.png">
+                </figure>
+                <figure>
+                    <img src="./bilder/bild3 - bearbeitet.png">
+                </figure>
+                <figure>
+                    <img src="./bilder/bild4 - bearbeitet.png">
+                </figure>
+                <figure>
+                    <img src="./bilder/bild5- bearbeitet.png">
+                </figure>
+            </div>
+        </div>
+
+        <div class="bilder-portfolio">
+            <br>
+            <br>
+            <br>
+            <h1>Here are some artworks of me.</h1><br>
+            <br>
+            <br>
+            <img class="img" src="./bilder/portfolio1 - bearbeitet.png">            
+            <img class="img" src="./bilder/portfolio2.png">
+            <img class="img" src="./bilder/portfolio3 - bearbeitet.png">
+            <img class="img" src="./bilder/portfolio4.png">
+            <img class="img" src="./bilder/portfolio5.png">
+            <img class="img" src="./bilder/portfoio6.png">
+            <img class="img" src="./bilder/portfolio7.PNG">
+            <img class="img" src="./bilder/portfolio8.PNG">
+            <img class="img" src="./bilder/portfolio9.PNG">
+            <img class="img" src="./bilder/portfolio10.jpeg">
+            <img class="img" src="./bilder/portfolio11.jpeg">
+            <img class="img" src="./bilder/portfolio12.jpeg">
+        </div>
+        
+    <footer class="footer">   
+
+            <ul class="impressum">
+                <li>Valeriya Ritz</li>
+                <li>Marktplatz 2</li>
+                <li>78120 Furtwangen</li>
+                <li>Germany</li> 
+            </ul>
+
+            <ul class="follow">
+                <li><a href="https://www.instagram.com/valeriyasworld/">  <img src="./bilder/icon_insta.svg" class="footer-follow-img"></a></li>
+                <li><a href="mailto:valeriya.ritz@hs-furtwangen.de">  <img src="./bilder/mail_icon.png" class="footer-follow-img"></a></li>
+                <li><a href="https://t.me/valeriyasworld">  <img src="./bilder/telegram.png" class="footer-follow-img"></a></li>
+            </ul>
+
+            <ul class="copyright">
+                <li>© 2022 Valeriya Ritz</li>
+                <li>All rights reserved</li>
+            </ul>
+
+    </footer>
+    
+
+</body>
+</html>
