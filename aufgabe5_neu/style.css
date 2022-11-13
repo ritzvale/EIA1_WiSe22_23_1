@@ -167,6 +167,11 @@
   height: 30px;
   width: 30px;
   padding: 0 5px;
+  color: red;
+}
+
+.footer-follow-img:hover {
+  color:black;
 }
 
 .contact-body-text {
@@ -223,18 +228,23 @@ form {
   right:50%;
   top:450px;
 }
+
 label {
   display: block;
   cursor: pointer;
 }
+
 input#absender, textarea {
   width: 300px;
   border: 1px solid #8c8c8c;
   margin-bottom: 1em;
 }
+
 textarea {
   height: 7em;
 }
+
 input:focus, textarea:focus {
   background-color: #d8cccc;
 }
+
