@@ -15,33 +15,42 @@ const Kroatien12: number = 4.30;
 
 const Text1 = "Gesamtzahl Einwohnerinnen und Einwohner in";
 const Text2 = "in 2022";
+const Text3 = "Deutschland";
+const Text4 = "Kroatien";
+const Text5 = "Frankreich";
+const Text6 = "Italien";
+const Text7 = "in der europäischen Union";
 
-const RelativDEzuEU: number = Math.abs((Deutschland22 / Europa22) * 100).toFixed(2);
-const RelativFRzuEU: number = Math.abs((Frankreich22 / Europa22) * 100).toFixed(2);
-const RelativITzuEU: number = Math.abs((Italien22 / Europa22) * 100).toFixed(2);
-const RelativKRzuEU: number = Math.abs((Kroatien22 / Europa22) * 100).toFixed(2);
+//Relativität//
+const RelativDEzuEU: number = ((Deutschland22 / Europa22) * 100);
+const RelativFRzuEU: number = ((Frankreich22 / Europa22) * 100);
+const RelativITzuEU: number = ((Italien22 / Europa22) * 100);
+const RelativKRzuEU: number = ((Kroatien22 / Europa22) * 100);
 
-const DifferenzDE: number = Math.abs(Deutschland22 - Deutschland12).toFixed(2);
-const DifferenzFR: number = Math.abs(Frankreich22 - Frankreich12).toFixed(2);
-const DifferenzIT: number = Math.abs(Italien22 - Italien12).toFixed(2);
-const DifferenzKR: number = Math.abs(Kroatien22 -Kroatien12).toFixed(2);
-const DifferenzEU: number = Math.abs(Europa22 - Europa12).toFixed(2);
+//Differenz//
+const DifferenzDE: number = (Deutschland22 - Deutschland12);
+const DifferenzFR: number = (Frankreich22 - Frankreich12);
+const DifferenzIT: number = (Italien22 - Italien12);
+const DifferenzKR: number = (Kroatien22 -Kroatien12);
+const DifferenzEU: number = (Europa22 - Europa12);
 
-const WachstumsrateDE12: number = Math.abs((DifferenzDE / Deutschland22) * 100).toFixed(2);
-const WachstumsrateFR12: number = Math.abs((DifferenzFR / Frankreich22) * 100).toFixed(2);
-const WachstumsrateIT12: number = Math.abs((DifferenzIT / Italien22) *100).toFixed(2);
-const WachstumsrateKR12: number = Math.abs((DifferenzKR / Kroatien22) * 100).toFixed(2);
-const WachstumsrateEU12: number = Math.abs((DifferenzEU / Europa22) * 100).toFixed(2);
+//Wachstunsrate//
+const WachstumsrateDE12: number = ((DifferenzDE / Deutschland22) * 100);
+const WachstumsrateFR12: number = ((DifferenzFR / Frankreich22) * 100);
+const WachstumsrateIT12: number = ((DifferenzIT / Italien22) *100);
+const WachstumsrateKR12: number = ((DifferenzKR / Kroatien22) * 100);
+const WachstumsrateEU12: number = ((DifferenzEU / Europa22) * 100);
 
 
 
 function Europa() {
    
-    document.getElementById("gesamt").innerHTML= Europa22 + " Mio"; 
+    document.getElementById("gesamt").innerHTML= Europa22 .toFixed(2)+ " Mio"; 
     document.getElementById("relativ").innerHTML= "100%"; 
     document.getElementById("wachstumsrate").innerHTML=WachstumsrateEU12 +"%";
     document.getElementById("wachstumsrategesamt").innerHTML= DifferenzEU + " Mio";
     document.getElementById("Name").innerHTML= Text1 + " Europa " + Text2; 
+    document.querySelector("h1").innerHTML= "Einwohnerzahl in " +  Text7;
 
     document.querySelector(".chart").setAttribute("style","height:" + "100%");
     document.querySelector(".stars").setAttribute("style", "opacity: " + "1"); 
@@ -70,6 +79,7 @@ function Deutschland() {
     document.getElementById("wachstumsrate").innerHTML= WachstumsrateDE12 +"%";
     document.getElementById("wachstumsrategesamt").innerHTML= DifferenzDE + " Mio";
     document.getElementById("Name").innerHTML= Text1 + " Deutschland " + Text2;
+    document.querySelector("h1").innerHTML= "Einwohnerzahl in " +  Text3;
 
 
     document.querySelector(".chart").setAttribute("style","height:" + (Deutschland22 / Europa22 * 100) + "%");
@@ -89,6 +99,7 @@ function Frankreich() {
     document.getElementById("wachstumsrate").innerHTML= WachstumsrateFR12 + "%";
     document.getElementById("wachstumsrategesamt").innerHTML= DifferenzFR + " Mio";
     document.getElementById("Name").innerHTML= Text1 + " Frankreich " + Text2; 
+    document.querySelector("h1").innerHTML= "Einwohnerzahl in " +  Text5;
 
 
     document.querySelector(".chart").setAttribute("style","height:" + (Frankreich22 / Europa22 * 100) + "%");
@@ -107,6 +118,7 @@ function Italien() {
     document.getElementById("wachstumsrate").innerHTML= WachstumsrateIT12 + "%";
     document.getElementById("wachstumsrategesamt").innerHTML= DifferenzIT + " Mio";
     document.getElementById("Name").innerHTML= Text1 + " Italien " + Text2; 
+    document.querySelector("h1").innerHTML= "Einwohnerzahl in " +  Text6;
 
 
     document.querySelector(".chart").setAttribute("style","height:" + (Italien22 / Europa22 * 100) + "%");
@@ -126,6 +138,7 @@ function Kroatien() {
     document.getElementById("wachstumsrate").innerHTML= WachstumsrateKR12 + "%";
     document.getElementById("wachstumsrategesamt").innerHTML= DifferenzKR + " Mio";
     document.getElementById("Name").innerHTML= Text1 + " Kroatien " + Text2; 
+    document.querySelector("h1").innerHTML= "Einwohnerzahl in " +  Text4;
 
 
     document.querySelector(".chart").setAttribute("style","height:" + (Kroatien22 / Europa22 * 100) + "%");
