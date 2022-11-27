@@ -1,12 +1,12 @@
-const Europa22 = 447.7;
-const Europa12 = 440.55;
+const Europa22 = 750.58;
+const Europa12 = 740.34;
 const Deutschland22 = 83.80;
 const Deutschland12 = 80.84;
-const Frankreich22 = 65.79;
+const Frankreich22 = 66.05;
 const Frankreich12 = 63.73;
-const Italien22 = 60.59;
+const Italien22 = 60.63;
 const Italien12 = 59.73;
-const Kroatien22 = 4.08;
+const Kroatien22 = 4.07;
 const Kroatien12 = 4.30;
 const Text1 = "Gesamtzahl Einwohnerinnen und Einwohner in";
 const Text2 = "in 2022";

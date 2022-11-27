@@ -1,16 +1,16 @@
-const Europa22: number = 447.7; 
-const Europa12: number = 440.55;
+const Europa22: number = 750.58; 
+const Europa12: number = 740.34;
 
 const Deutschland22: number = 83.80; 
 const Deutschland12: number = 80.84;
 
-const Frankreich22: number = 65.79;
+const Frankreich22: number = 66.05;
 const Frankreich12: number = 63.73; 
 
-const Italien22: number = 60.59;
+const Italien22: number = 60.63;
 const Italien12: number = 59.73;
 
-const Kroatien22: number = 4.08;
+const Kroatien22: number = 4.07;
 const Kroatien12: number = 4.30; 
 
 const Text1 = "Gesamtzahl Einwohnerinnen und Einwohner in";
