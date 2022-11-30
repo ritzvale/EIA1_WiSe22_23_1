@@ -13,13 +13,14 @@ const Italien12: number = 59.73;
 const Kroatien22: number = 4.07;
 const Kroatien12: number = 4.30; 
 
-const Text1 = "Gesamtzahl Einwohnerinnen und Einwohner in";
-const Text2 = "in 2022";
-const Text3 = "Deutschland";
-const Text4 = "Kroatien";
-const Text5 = "Frankreich";
-const Text6 = "Italien";
-const Text7 = "in der europäischen Union";
+const gesamt = document.querySelector("#gesamt");
+const gesamttext = document.querySelector("#gesamttext");
+const relativ = document.querySelector("#relativ");
+const relativtext = document.querySelector("#relativtext")
+const wachstum = document.querySelector("#wachstum");
+const wachstumtext = document.querySelector ("#wachstumtext");
+const wachstumgesamt = document.querySelector("#wachstumgesamt");
+const wachstumgesamttext = document.querySelector ("#wachstumgesamttext");
 
 //Relativität//
 const RelativDEzuEU: number = ((Deutschland22 / Europa22) * 100);
@@ -34,117 +35,41 @@ const DifferenzIT: number = (Italien22 - Italien12);
 const DifferenzKR: number = (Kroatien22 -Kroatien12);
 const DifferenzEU: number = (Europa22 - Europa12);
 
-//Wachstunsrate//
+//Wachstumsrate//
 const WachstumsrateDE12: number = ((DifferenzDE / Deutschland22) * 100);
 const WachstumsrateFR12: number = ((DifferenzFR / Frankreich22) * 100);
 const WachstumsrateIT12: number = ((DifferenzIT / Italien22) *100);
 const WachstumsrateKR12: number = ((DifferenzKR / Kroatien22) * 100);
 const WachstumsrateEU12: number = ((DifferenzEU / Europa22) * 100);
 
-
-
-function Europa() {
-   
-    document.getElementById("gesamt").innerHTML= Europa22 .toFixed(2)+ " Mio"; 
-    document.getElementById("relativ").innerHTML= "100%"; 
-    document.getElementById("wachstumsrate").innerHTML=WachstumsrateEU12 +"%";
-    document.getElementById("wachstumsrategesamt").innerHTML= DifferenzEU + " Mio";
-    document.getElementById("Name").innerHTML= Text1 + " Europa " + Text2; 
-    document.querySelector("h1").innerHTML= "Einwohnerzahl in " +  Text7;
-
-    document.querySelector(".chart").setAttribute("style","height:" + "100%");
-    document.querySelector(".stars").setAttribute("style", "opacity: " + "1"); 
-    document.querySelector("#dt").setAttribute("class", "wrapper"); 
-    document.querySelector("#fr").setAttribute("class", "wrapper");
-    document.querySelector("#it").setAttribute("class", "wrapper");
-    document.querySelector("#cr").setAttribute("class", "wrapper");
-    
-}
-
-window.addEventListener("load", function(){
-
-document.querySelector(".chartStarWrapper").addEventListener('click', Europa);
-document.querySelector(".germany").addEventListener('click',Deutschland);
-document.querySelector(".france").addEventListener('click', Frankreich);
-document.querySelector(".italy").addEventListener('click', Italien);
-document.querySelector(".croatia").addEventListener('click', Kroatien);
-
-
+document.querySelector("#dt").addEventListener("click", function(){
+    changeTo(Deutschland22, Deutschland12, DifferenzDE, WachstumsrateDE12,"stylede")
 });
 
-function Deutschland() {
-   
-    document.getElementById("gesamt").innerHTML= Deutschland22 + " Mio"; 
-    document.getElementById("relativ").innerHTML= RelativDEzuEU + "%"; 
-    document.getElementById("wachstumsrate").innerHTML= WachstumsrateDE12 +"%";
-    document.getElementById("wachstumsrategesamt").innerHTML= DifferenzDE + " Mio";
-    document.getElementById("Name").innerHTML= Text1 + " Deutschland " + Text2;
-    document.querySelector("h1").innerHTML= "Einwohnerzahl in " +  Text3;
+document.querySelector("#fr").addEventListener("click", function(){
+    changeTo(Frankreich22, Frankreich12, DifferenzFR, WachstumsrateFR12,"stylefr")
+});
 
+document.querySelector("#it").addEventListener("click", function(){
+    changeTo(Italien22, Italien12, DifferenzIT, WachstumsrateIT12,"styleit")
+});
 
-    document.querySelector(".chart").setAttribute("style","height:" + (Deutschland22 / Europa22 * 100) + "%");
-    document.querySelector(".stars").setAttribute("style", "opacity: " + "0.5"); 
-    document.querySelector("#dt").setAttribute("class", "active"); 
-    document.querySelector("#fr").setAttribute("class", "wrapper");
-    document.querySelector("#it").setAttribute("class", "wrapper");
-    document.querySelector("#cr").setAttribute("class", "wrapper");
-}
+document.querySelector("#cr").addEventListener("click", function(){
+    changeTo(Kroatien22, Kroatien12, DifferenzKR, WachstumsrateKR12,"stylekr")
+});
 
+document.querySelector("#eu").addEventListener("click", function(){
+    changeTo(Europa22, Europa12, DifferenzEU, WachstumsrateEU12,"styleeu")
+});
 
-
-function Frankreich() {
-
-    document.getElementById("gesamt").innerHTML= Frankreich22 + " Mio";
-    document.getElementById("relativ").innerHTML= RelativFRzuEU + "%";
-    document.getElementById("wachstumsrate").innerHTML= WachstumsrateFR12 + "%";
-    document.getElementById("wachstumsrategesamt").innerHTML= DifferenzFR + " Mio";
-    document.getElementById("Name").innerHTML= Text1 + " Frankreich " + Text2; 
-    document.querySelector("h1").innerHTML= "Einwohnerzahl in " +  Text5;
-
-
-    document.querySelector(".chart").setAttribute("style","height:" + (Frankreich22 / Europa22 * 100) + "%");
-    document.querySelector(".stars").setAttribute("style", "opacity: " + "0.5"); 
-    document.querySelector("#dt").setAttribute("class", "wrapper"); 
-    document.querySelector("#fr").setAttribute("class", "active");
-    document.querySelector("#it").setAttribute("class", "wrapper");
-    document.querySelector("#cr").setAttribute("class", "wrapper");
-}
-
-
-function Italien() {
-
-    document.getElementById("gesamt").innerHTML= Italien22 + " Mio";
-    document.getElementById("relativ").innerHTML= RelativITzuEU + "%";
-    document.getElementById("wachstumsrate").innerHTML= WachstumsrateIT12 + "%";
-    document.getElementById("wachstumsrategesamt").innerHTML= DifferenzIT + " Mio";
-    document.getElementById("Name").innerHTML= Text1 + " Italien " + Text2; 
-    document.querySelector("h1").innerHTML= "Einwohnerzahl in " +  Text6;
-
-
-    document.querySelector(".chart").setAttribute("style","height:" + (Italien22 / Europa22 * 100) + "%");
-    document.querySelector(".stars").setAttribute("style", "opacity: " + "0.5");
-    document.querySelector("#dt").setAttribute("class", "wrapper"); 
-    document.querySelector("#fr").setAttribute("class", "wrapper");
-    document.querySelector("#it").setAttribute("class", "active");
-    document.querySelector("#cr").setAttribute("class", "wrapper");
-}
-
-
-
-function Kroatien() {
-
-    document.getElementById("gesamt").innerHTML= Kroatien22 + " Mio";
-    document.getElementById("relativ").innerHTML= RelativKRzuEU + "%";
-    document.getElementById("wachstumsrate").innerHTML= WachstumsrateKR12 + "%";
-    document.getElementById("wachstumsrategesamt").innerHTML= DifferenzKR + " Mio";
-    document.getElementById("Name").innerHTML= Text1 + " Kroatien " + Text2; 
-    document.querySelector("h1").innerHTML= "Einwohnerzahl in " +  Text4;
-
-
-    document.querySelector(".chart").setAttribute("style","height:" + (Kroatien22 / Europa22 * 100) + "%");
-    document.querySelector(".stars").setAttribute("style", "opacity: " + "0.5"); 
-    document.querySelector("#dt").setAttribute("class", "wrapper"); 
-    document.querySelector("#fr").setAttribute("class", "wrapper");
-    document.querySelector("#it").setAttribute("class", "wrapper");
-    document.querySelector("#cr").setAttribute("class", "active");
+function changeTo (population22,population12,Prozent,Wachstumsrate,style) {
+    gesamt.innerHTML = population22.toString();
+    gesamttext.innerHTML = "Gesamtzahl EinwohnerInnen in 2022 in Mio";
+    relativ.innerHTML = population12.toString();
+    relativtext.innerHTML = "Gesamtzahl EinwohnerInnen im Jahr 2012 in Mio";
+    wachstum.innerHTML = Prozent.toFixed(2).toString();
+    wachstumtext.innerHTML = "Wachstumsrate seit 2022 in Prozent";
+    wachstumgesamt.innerHTML = Wachstumsrate.toFixed(2).toString();
+    wachstumgesamttext.innerHTML = "Wachstumsrate gesamt zwischen 2012 und 2022 in Mio"
+    document.getElementById("chart").className = style;
 }
