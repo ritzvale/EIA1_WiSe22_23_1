@@ -1,87 +1,115 @@
 
-var sounds: string[] = [
-    ("./BilderSounds/DrumPad_A.mp3"), 
-    ("./BilderSounds/DrumPad_C.mp3"), 
-    ("./BilderSounds/DrumPad_F.mp3"), 
-    ("./BilderSounds/DrumPad_G.mp3"), 
-    ("./BilderSounds/DrumPad_hihat.mp3"), 
-    ("./BilderSounds/DrumPad_kick.mp3"), 
-    ("./BilderSounds/DrumPad_snare.mp3"), 
-    ("./BilderSounds/DrumPad_laugh-1.mp3"), 
-    ("./BilderSounds/DrumPad_laugh-2.mp3")]; 
-    
-    var beat: string [] = [sounds [4], sounds [5], sounds [6]];
-    
-    var zaehler: number = 0;
-    var beatremix: number;
-    var interval: number = 0;
-    
-    
-    window.addEventListener("load", addClickListenerDrumpad);
-    
-    
-    function playSample(soundQuelle: string): void {
-    
-        var sound: HTMLAudioElement = new Audio(soundQuelle);
-        sound.play();
-    }
-    
+let Sounds: string[] = [("./assets/A.mp3"),("./assets/C.mp3"),("./assets/F.mp3"),("./assets/G.mp3"),
+("./assets/hihat.mp3"),("./assets/kick.mp3"),("./assets/laugh-1.mp3"),("./assets/laugh-2.mp3"),
+("./assets/snare.mp3")];
 
-    function Remix (): void {
-    
-    
-        document.querySelector("#remix").addEventListener("click", function(): void {
-    
-                beatremix = setInterval(function (): void {
-                playSample( beat [zaehler] );
-                zaehler = Math.floor(Math.random () * 9);
-                },
-                300);
-                });
-        }
-    
-    
-    
-    
-    function PlayBeat(): void {
-    
-    if (document.getElementById("play").classList.contains("fa-play")) {
-        document.getElementById("play").classList.remove("fa-play");
-        document.getElementById("play").classList.add("fa-stop");
-        interval = setInterval(myBeat, 350);
-    
-    }
-    else {
-    document.getElementById("play").classList.remove("fa-stop");
-    document.getElementById("play").classList.add("fa-play");
-    clearInterval(interval);
-    
-    }
-    
-    function myBeat(): void {
-        playSample(beat[zaehler]);
-        zaehler += 1;
-        if (zaehler > (beat.length - 1))
+let beat: string[] = [Sounds[5], Sounds[4], Sounds[8], Sounds[4],];
+let beatremix: number;
+let nIntervID;
+let nIntervID2;
+
+let zaehler: number = 0;
+let zaehler2: number = 0;
+
+const playbutton:any= document.querySelector(".fa-play");
+
+const stopbutton:any= document.querySelector(".fa-stop");
+
+window.addEventListener("load" , addClickListenersDrumPad)
+
+function playSample(soundquelle: string):void {
+    let sound: HTMLAudioElement = new Audio(soundquelle);
+    sound.play();
+}
+
+let loop:any = function (): void{
+    playSample (beat[zaehler]);
+    zaehler ++;
+    if(zaehler === 4) {
         zaehler = 0;
+    }
+    }
+
+
+function playBeat(): void{
+         if(!nIntervID) {
+            nIntervID = setInterval(loop , 350)
+         }
+   
+    }
+
+function stoploop(): void{
+    clearInterval(nIntervID);
+    clearInterval(nIntervID2);
+    nIntervID = null;
+    nIntervID2 = null;
+}
+
+function switchbutton(): void{
+    if (playbutton.style.visibility == "hidden")
+    {
+        playbutton.style.visibility = "visible";
+        stopbutton.style.visibility = "hidden";
+    }
+    else{
+        playbutton.style.visibility = "hidden";
+        stopbutton.style.visibility = "visible";
+    }
+}
+function switchbuttonstp(): void{
+    if (stopbutton.style.visibility == "visible")
+    {
+        playbutton.style.visibility = "visible";
+        stopbutton.style.visibility = "hidden";
+    }
+    else{
+        playbutton.style.visibility = "hidden";
+        stopbutton.style.visibility = "visible";
+    }
+
+}
+function switchbuttonrmx(){
+    if (playbutton.style.visibility == "hidden")
+    {
+        playbutton.style.visibility = "hidden";
+        stopbutton.style.visibility = "visible";
+    }
+    else{
+        playbutton.style.visibility = "hidden";
+        stopbutton.style.visibility = "visible";
+    }
+
+}
+
+
+let remix:any= function(){
+    zaehler2 = Math.floor(Math.random ()*9)
+        playSample( Sounds [zaehler2]);
         
-        }
+    };
+function remixplay() {
+    if(!nIntervID2) {
+        nIntervID2 = setInterval(remix , 350)
+     }
+        clearInterval(nIntervID);
     
-    }
-    
-    function addClickListenerDrumpad(): void {
-    
-    document.querySelector(".pad-1").addEventListener("click", function (): void { playSample(sounds[0]); });
-    document.querySelector(".pad-2").addEventListener("click", function (): void { playSample(sounds[1]); });
-    document.querySelector(".pad-3").addEventListener("click", function (): void { playSample(sounds[2]); });
-    document.querySelector(".pad-4").addEventListener("click", function (): void { playSample(sounds[3]); });
-    document.querySelector(".pad-5").addEventListener("click", function (): void { playSample(sounds[4]); });
-    document.querySelector(".pad-6").addEventListener("click", function (): void { playSample(sounds[5]); });
-    document.querySelector(".pad-7").addEventListener("click", function (): void { playSample(sounds[6]); });
-    document.querySelector(".pad-8").addEventListener("click", function (): void { playSample(sounds[7]); });
-    document.querySelector(".pad-9").addEventListener("click", function (): void { playSample(sounds[8]); });
-    
-    
-    document.querySelector("#play").addEventListener("click", PlayBeat);
-    document.querySelector("#remix").addEventListener("click", function (): void {Remix(); });
-    
-    }
+}   
+
+
+function addClickListenersDrumPad():void{
+    document.querySelector(".a").addEventListener("click", function(): void {playSample(Sounds[5]);});
+    document.querySelector(".b").addEventListener("click", function(): void {playSample(Sounds[8]);});
+    document.querySelector(".c").addEventListener("click", function(): void {playSample(Sounds[4]);});
+    document.querySelector(".d").addEventListener("click", function(): void {playSample(Sounds[0]);});
+    document.querySelector(".e").addEventListener("click", function(): void {playSample(Sounds[1]);});
+    document.querySelector(".f").addEventListener("click", function(): void {playSample(Sounds[2]);});
+    document.querySelector(".g").addEventListener("click", function(): void {playSample(Sounds[3]);});
+    document.querySelector(".h").addEventListener("click", function(): void {playSample(Sounds[6]);});
+    document.querySelector(".i").addEventListener("click", function(): void {playSample(Sounds[7]);});
+    document.querySelector(".fa-play").addEventListener("click", function(): void {playBeat();});
+    document.querySelector(".fa-play").addEventListener("click", function(): void {switchbutton();});
+    document.querySelector(".fa-stop").addEventListener("click", function(): void {switchbuttonstp();});
+    document.querySelector(".fa-stop").addEventListener("click", function(): void {stoploop();});
+    document.querySelector("#remixb").addEventListener("click", remixplay);
+    document.querySelector("#remixb").addEventListener("click", function():void {switchbuttonrmx();});
+}

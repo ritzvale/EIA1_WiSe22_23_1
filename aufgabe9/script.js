@@ -8,19 +8,16 @@ var sounds = [
     ("./BilderSounds/DrumPad_snare.mp3"),
     ("./BilderSounds/DrumPad_laugh-1.mp3"),
     ("./BilderSounds/DrumPad_laugh-2.mp3")
-]; 
+];
 var beat = [sounds[4], sounds[5], sounds[6]];
 var zaehler = 0;
 var beatremix;
 var interval = 0;
-
 window.addEventListener("load", addClickListenerDrumpad);
-
 function playSample(soundQuelle) {
     var sound = new Audio(soundQuelle);
     sound.play();
 }
-
 function Remix() {
     document.querySelector("#remix").addEventListener("click", function () {
         beatremix = setInterval(function () {
@@ -29,7 +26,6 @@ function Remix() {
         }, 300);
     });
 }
-
 function PlayBeat() {
     if (document.getElementById("play").classList.contains("fa-play")) {
         document.getElementById("play").classList.remove("fa-play");
